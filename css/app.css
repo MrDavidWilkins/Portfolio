@@ -1,0 +1,160 @@
+body {
+  overflow: hidden ;
+  z-index: -1;
+}
+
+@@font-face {
+  font-family: 'Share Tech', sans-serif;
+}
+.hidden{
+  display: none;
+}
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -999;
+}
+
+.container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  cursor: grab;
+}
+
+.mainButton {
+  height: 100px;
+  width: 100px;
+  border: 3px solid;
+  background-color: #101010;
+  border-color: #c7a230;
+  border-radius: 100%;
+  transition: background-color .5s;
+}
+
+.mainButton:hover{
+  background-color: #bbb;
+  border-color: #fff;
+}
+
+.leftButton{
+  float: left;
+}
+
+.rightButton{
+  float: right;
+  margin-right: 0;
+}
+
+.topButton{
+  margin-top: 20px;
+}
+
+.midButton{
+  clear: both;
+  margin-top: 340px;
+}
+
+.botButton{
+  clear: both;
+  margin-top: 680px;
+}
+
+.lightbox{
+  background-color: #000 ;
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  top: 5%;
+  bottom: 5%;
+  width: 80%;
+  height: 90%;
+  border: 4px solid #2d2500;
+  opacity: .9;
+  z-index: 3;
+
+}
+
+.topBar {
+  background-color: #2d2500;
+  width: 100%;
+  height: 40px;
+  opacity: 1;
+}
+
+.close{
+  height: 90%;
+  width: 60px;
+  padding-left: 20px;
+  padding-top: 5px;
+  background-color: #000;
+}
+
+.twoPanel{
+  background-color: #333;
+  margin: 0 auto;
+  margin-top: 1.5%;
+  width: 96%;
+  height: 90%;
+}
+
+.panel{
+  height: 96%;
+  width: 49%;
+  margin-top: 1%;
+  background-color: #fff;
+}
+
+.leftPanel {
+  float: left;
+  overflow-y: scroll;
+}
+
+.rightPanel {
+  float: right;
+}
+.panelImage {
+  width: 250px;
+  float: left;
+  padding-left: 10px;
+}
+
+.street{
+  display: none;
+}
+
+.label{
+  background-color: rgba(0,0,0,0.3);
+  border: 1px solid #c7a230;
+  font-family: Share Tech;
+  font-size: 40px;
+}
+
+.textbox{
+  background-color: rgba(0,0,0,0.5);
+  border: none;
+  border-bottom: 2px solid #c7a230;
+  font-size: 14px;
+  height: 45px;
+  font-family: Share tech;
+  color: #fff;
+}
+
+.msgBox{
+  height: 100%;
+  resize: none;
+}
+
+.textbox:focus{
+  background-color: rgba(0,0,0,0.5);
+}
+
+.submit{
+  color: #fff;
+  background-color: rgba(0,0,0,0.3);
+  border: 1px solid #c7a230;
+  font-family: Share Tech;
+  font-size: 40px;
+}
