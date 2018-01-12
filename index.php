@@ -61,9 +61,9 @@ if(isset($_POST['submit'])){
         <i class="fa fa-eye-slash fa-4x fa-inverse"></i>
       </button>
     </div>
-  </div>
   <canvas id="mainCanvas" width="100%" height="100%"></canvas>
   <img class="background" src="assets/img/bg_gold-black.png" alt="">
+  </div>
 </body>
 
 <!-- Libraries -->

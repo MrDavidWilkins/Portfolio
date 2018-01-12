@@ -54,6 +54,13 @@ function init() {
 	// scene.add( ambient );
 	// geometry
 
+	var logoGeo = new THREE.PlaneGeometry(10,7);
+	var logoMat = new THREE.MeshBasicMaterial({
+		map: THREE.ImageUtils.loadTexture('assets/3d/logo.png')
+	});
+	var logoMesh = new THREE.Mesh(logoGeo, logoMat);
+	logoMesh.material.side = THREE.DoubleSide;
+
 	var bgGeometry = new THREE.SphereGeometry(100,100,100);
 	var bgMaterial = new THREE.MeshBasicMaterial({
 		map: THREE.ImageUtils.loadTexture('assets/img/triangles.png'),
@@ -102,11 +109,15 @@ function init() {
 	// triangles
 
 
-	scene.add(mesh, bgMesh, alphaSatMesh,betaSatMesh,gammaSatMesh);
+	scene.add(mesh, bgMesh, alphaSatMesh,betaSatMesh,gammaSatMesh, logoMesh);
 
 	mesh.position.x =0;
 	mesh.position.y =0;
 	mesh.position.z =0;
+
+	logoMesh.position.x = 0;
+	logoMesh.position.y = 0;
+	logoMesh.position.z = 15;
 
 	alphaSatMesh.position.x =10;
 	alphaSatMesh.position.y =10;
@@ -130,7 +141,7 @@ function init() {
 	renderer = new THREE.WebGLRenderer( { canvas:mainCanvas, antialias: true, alpha:true } );
 	renderer.setClearColor (0xffffff, 0);
 	renderer.setSize( window.innerWidth, window.innerHeight );
-	document.body.appendChild( renderer.domElement );
+	document.querySelector('.container').appendChild( renderer.domElement );
 	renderer.shadowMap.enabled = true;
 	renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
