@@ -10,7 +10,7 @@
   }
 
 function submitMessage($name, $email, $message, $direct){
-$to = "accounts@davidwilkins.ca";
+$to = "david_was_here111@hotmail.com";
 $subj = "Message recieved through davidwilkins.ca";
 $extra = "Reply-To: ".$email;
 $msg = "Name: " .$name."\n\nEmail:".$email."\n\nComments: ".$message;

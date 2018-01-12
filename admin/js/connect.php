@@ -5,7 +5,7 @@
     // On a PC the password string is always blank.
     //$pass = "";
     $url = "localhost";
-    $db = "db_movies";
+    $db = "db_portfolio";
 
     //$link = mysqli_connect($url, $user, $pass, $db); //PC
     $link = mysqli_connect($url, $user, $pass, $db, "8888");

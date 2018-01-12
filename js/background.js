@@ -18,11 +18,11 @@ function init() {
 	camera = new THREE.PerspectiveCamera( 100, window.innerWidth / window.innerHeight, 0.01, 1000 );
 	camera.position.z = 20;
 
-  controls = new THREE.OrbitControls( camera );
+	controls = new THREE.OrbitControls( camera );
 
-  controls.addEventListener('change', render);
+	controls.addEventListener('change', render);
 
-	controls.enabled = false;
+	controls.enabled = true;
 	controls.autoRotate = true;
 	controls.autoRotateSpeed = .01;
 	controls.rotateSpeed = .02;
@@ -52,7 +52,7 @@ function init() {
 
 	var ambient = new THREE.AmbientLight( 0x606060 );
 	// scene.add( ambient );
-// geometry
+	// geometry
 
 	var bgGeometry = new THREE.SphereGeometry(100,100,100);
 	var bgMaterial = new THREE.MeshBasicMaterial({
@@ -65,9 +65,9 @@ function init() {
 	// prism
 	var geometry = new THREE.DodecahedronBufferGeometry(13 ,1);
 	var material = new THREE.MeshPhongMaterial({
-		color:  0xc7a230,
+		color:  0xC19729,
 		bumpMap: THREE.ImageUtils.loadTexture('assets/3d/bump.png'),
-		shininess: 200
+		shininess: 4000
 	});
 	var mesh = new THREE.Mesh( geometry, material );
 
@@ -79,7 +79,7 @@ function init() {
 	var alphaSatMesh = new THREE.Mesh( alphaSatGeo, alphaSatMat );
 	alphaSatMesh.castShadow = true;
 
-	var betaSatGeo = new THREE.SphereGeometry(1 ,6, 6);
+	var betaSatGeo = new THREE.SphereGeometry(1 ,20, 20);
 	var betaSatMat = new THREE.MeshPhongMaterial({
 		color:  0xa2a2a2
 	});
@@ -127,7 +127,7 @@ function init() {
 	mesh.receiveShadow = true;
 
 
-	renderer = new THREE.WebGLRenderer( { antialias: true, alpha:true } );
+	renderer = new THREE.WebGLRenderer( { canvas:mainCanvas, antialias: true, alpha:true } );
 	renderer.setClearColor (0xffffff, 0);
 	renderer.setSize( window.innerWidth, window.innerHeight );
 	document.body.appendChild( renderer.domElement );
@@ -145,7 +145,6 @@ function onWindowResize() {
 	camera.updateProjectionMatrix();
 
 	renderer.setSize( window.innerWidth, window.innerHeight );
-	composer.setSize( window.innerWidth, window.innerHeight );
 
 
 }
@@ -157,7 +156,7 @@ function animate() {
 
 
 
-  controls.update();
+	controls.update();
 	render();
 }
 
